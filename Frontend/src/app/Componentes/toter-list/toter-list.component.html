@@ -1,0 +1,28 @@
+<div class="col-md-5" *ngFor="let toter of toters">
+    <div class="card tex-center">
+        <div class="card-header d-flex justify-content-between aline-itens-center">
+
+            {{toter.nome}}
+            <button class="btn btn-danger" (click)="deleteToter(toter.id)">
+                <i class="far fa-trash-alt">
+
+                </i>
+            </button>
+        </div>
+        <img [src]="toter.image" class="card img-top">
+        <div class="card-body">
+            <p>
+               Idade: {{toter.edade}} anos
+            </p>
+            <p>
+                Ubicação: {{toter.local}} 
+            </p>
+
+            <p>
+               Acerca de mim: {{toter.area}}
+            </p>
+                <a [routerLink]="['/toters/edit', toter.id]" class="btn btn-info btn-block">EDITAR</a>
+        </div>
+    </div>
+
+</div>
